@@ -1,0 +1,10 @@
+[Aisleriot Config]
+ShowToolbar=true
+ShowStatusbar=true
+Sound=true
+Animations=true
+Recent=klondike;
+Variation=klondike.scm
+
+[klondike.scm]
+Statistic=2;4;229;247;
