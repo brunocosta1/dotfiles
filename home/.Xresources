@@ -9,8 +9,8 @@ URxvt.internalBorder:  20
 
 !! Preferências de Fonts
 
-URxvt.font: xft:Consolas:pixelsize=11
-URxvt.boldFont: xft:Consolas:pixelsize=11:Bold
+URxvt.font: xft:Hack:pixelsize=13
+URxvt.boldFont: xft:Hack:pixelsize=11:Bold
 urxvt.letterSpace: -1
 
 
