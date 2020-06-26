@@ -105,5 +105,11 @@ source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+prompt pure
+
+
+
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
