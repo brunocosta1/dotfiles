@@ -62,7 +62,7 @@ call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
+":let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
@@ -91,6 +91,9 @@ Plugin 'morhetz/gruvbox'
 "Plugin delimitmate
 Plugin 'raimondi/delimitmate'
 
+"Plugin vim-gotham
+Plugin 'whatyouhide/vim-gotham'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -107,4 +110,6 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 set number
-autocmd vimenter * colorscheme gruvbox
+colorscheme gotham256
+
+
