@@ -25,12 +25,10 @@ Plug 'lyuts/vim-rtags'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
 Plug 'mbbill/undotree'
-
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 syntax enable
 set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
-
+autocmd vimenter * colorscheme gruvbox
 
