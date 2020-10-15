@@ -114,6 +114,6 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
+export TERM="xterm-256color"
 
-
-DEFAULT_USER='whoami' 
+export DEFAULT_USER="$(whoami)" 
