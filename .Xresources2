@@ -39,6 +39,13 @@
 
 ! Fonts
 
-*faceName: Inconsolata
+*faceName: Inconsolata for Powerline
 *faceSize: 13
 
+! Key binds
+
+xterm*vt100.Translations: #override \
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key> minus: smaller-vt-font() \n\
+    Ctrl Shift <Key> plus: larger-vt-font()
