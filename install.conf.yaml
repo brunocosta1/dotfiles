@@ -8,5 +8,20 @@
     ~/.Xresources2: Xresources2
     ~/.vim: vim
     ~/.vimrc: vimrc
+        relink: true
+        path: vimrc
     ~/.zshrc: zshrc
+        force: true
+        path: zshrc
     ~/.config: config
+        glob: true
+        path: config/*
+        relink: true
+- create:
+    - ~/.vim/undo-history
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+
+
+
