@@ -10,7 +10,7 @@
       command: "sudo --validate"
 - clean: ['~']
 - link:
-    ~/.Xresources2: Xresources2 
+    ~/.Xresources: Xresources 
     ~/.vim: vim
     ~/.vimrc: 
         path: vimrc
