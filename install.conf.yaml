@@ -5,14 +5,12 @@
 - clean: ['~']
 
 - link:
-    ~/.Xresources2: Xresources2
-    ~/.vim: vim
+    ~/.Xresources2: 
+    ~/.vim: 
     ~/.vimrc: vimrc
         relink: true
-        path: vimrc
     ~/.zshrc: zshrc
         force: true
-        path: zshrc
     ~/.config: config
         glob: true
         path: config/*
