@@ -1,1 +1,0 @@
-../../../../../../../.config/i3blocks/monitor_manager/monitor_manager
