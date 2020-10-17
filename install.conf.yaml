@@ -23,4 +23,8 @@
     - ~/.vim/undo-history
     - ~/.vim/fzf_history
 
-
+- shell:
+    - apt install cmake
+    - apt install python3
+    - python3 ~/.vim/plugged/YouCompleteMe/install.py # To install YouCompleteMe plugin correctly (requires python3 and cmake)
+    
