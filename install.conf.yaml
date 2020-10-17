@@ -1,25 +1,23 @@
 - default:
     link:
         relink: true
-
+        create: true 
+        force: true
+    shell: 
+        quiet: true
+- shell:
+    - description: Validating sudo credentials
+      command: "sudo --validate"
 - clean: ['~']
-
 - link:
+    ~/.gitconfig: git/config
     ~/.Xresources2: 
     ~/.vim: 
-    ~/.vimrc: vimrc
-        relink: true
-    ~/.zshrc: zshrc
-        force: true
+    ~/.vimrc: vim/vimrc
+    ~/.zshrc: zsh/zshrc
     ~/.config: config
-        glob: true
-        path: config/*
-        relink: true
 - create:
     - ~/.vim/undo-history
-
-- shell:
-    - [git submodule update --init --recursive, Installing submodules]
-
+    - ~/.vim/fzf_history
 
 
