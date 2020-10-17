@@ -10,12 +10,12 @@
       command: "sudo --validate"
 - clean: ['~']
 - link:
-    ~/.gitconfig: git/config
+    ~/.gitconfig: 
     ~/.Xresources2: 
     ~/.vim: 
-    ~/.vimrc: vim/vimrc
-    ~/.zshrc: zsh/zshrc
-    ~/.config: config
+    ~/.vimrc: 
+    ~/.zshrc: 
+    ~/.config: 
 - create:
     - ~/.vim/undo-history
     - ~/.vim/fzf_history
