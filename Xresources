@@ -59,9 +59,8 @@ URxvt.keysym.Control-Down:        \033[1;5B
 URxvt.keysym.Shift-Control-Down:  \033[1;6B
 
 URxvt.vt100.translations: #override \n\
-    Ctrl <key>minus: smaller-vt-font() \n\
-    Ctrl <key>plus: larger-vt-font()
-
+    Ctrl <Key>minus: smaller-vt-font() \n\
+    Ctrl <Key>plus: larger-vt-font() \n\
 
 *faceName: Inconsolata for Powerline
 *faceSize: 13
