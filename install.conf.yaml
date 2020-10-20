@@ -33,7 +33,10 @@
 
     - description: Install vim plugins
       command: "vim +PlugInstall +qa"
-    - sudo apt install cmake
-    - sudo apt install python3
-    - python3 ~/.vim/plugged/YouCompleteMe/install.py # To install YouCompleteMe plugin correctly (requires python3 and cmake)
+    - description: Install cmake
+      command: "sudo apt install cmake"
+    - description: Install python3
+      command: "sudo apt install python3"
+    - description: Install YouCompleteMe vim plugin 
+      command: "python3 ~/.vim/plugged/YouCompleteMe/install.py" # To install YouCompleteMe plugin correctly (requires python3 and cmake)
     
