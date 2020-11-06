@@ -61,6 +61,8 @@ URxvt.keysym.Shift-Control-Down:  \033[1;6B
 URxvt.vt100.translations: #override \n\
     Ctrl <Key>minus: smaller-vt-font() \n\
     Ctrl <Key>plus: larger-vt-font() \n\
+    Ctrl Shift <Key>C: copy-selection(CLIPBOARD) \n\
+    Ctrl Shift <Key>V: insert-selection(CLIPBOARD) 
 
 *faceName: Inconsolata for Powerline
 *faceSize: 13
