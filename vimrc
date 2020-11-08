@@ -26,12 +26,11 @@ Plug 'https://github.com/ctrlpvim/ctrlp.vim.git'
 Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
-Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'lifepillar/vim-solarized8'
+Plug 'powerline/powerline'
 
 call plug#end()
 
 syntax enable
 set background=dark
-autocmd vimenter * colorscheme gruvbox
-
-
+colorscheme solarized8_flat
