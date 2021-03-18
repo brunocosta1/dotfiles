@@ -8,10 +8,9 @@ sudo apt update
 
 # Installing the core programs with apt
 
-sudo apt install fonts-powerline i3 fzf fonts-inconsolata xterm rofi vim git build-essential tmux zsh cmake
+sudo apt install fonts-powerline i3 i3-blocks fzf fonts-inconsolata urxvt rofi vim git build-essential tmux zsh cmake python3 python3-dev
 
 # Installing other programs 
 
-sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 
