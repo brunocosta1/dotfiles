@@ -8,7 +8,7 @@ sudo apt update
 
 # Installing the core programs with apt
 
-sudo apt install fonts-powerline i3 fzf fonts-inconsolata xterm rofi vim git build-essential tmux zsh
+sudo apt install fonts-powerline i3 fzf fonts-inconsolata xterm rofi vim git build-essential tmux zsh cmake
 
 # Installing other programs 
 

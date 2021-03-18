@@ -28,7 +28,7 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'powerline/powerline'
 
 call plug#end()
-
+colorscheme gruvbox
+let g:gruvbox_termcolors= 256
 syntax enable
 set background=dark
-colorscheme solarized8_high
