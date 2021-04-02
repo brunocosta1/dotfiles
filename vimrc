@@ -30,6 +30,8 @@ Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
 Plug 'vim-airline/vim-airline'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+
 call plug#end()
 
 colorscheme gruvbox
