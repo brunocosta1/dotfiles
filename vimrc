@@ -93,7 +93,6 @@ au BufNewFile,BufRead *.js,*.html,*.css
     \ set softtabstop=2
     \ set shiftwidth=2
 
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
 
