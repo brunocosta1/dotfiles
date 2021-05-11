@@ -18,12 +18,10 @@ set incsearch
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'rust-lang/rust.vim'
-Plug 'lyuts/vim-rtags'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'powerline/powerline'
@@ -33,11 +31,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'tmhedberg/SimpylFold'
-Plug 'vim-scripts/indentpython.vim'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'jnurmine/Zenburn'
-Plug 'altercation/vim-colors-solarized'
 
 
 call plug#end()
@@ -92,7 +88,7 @@ au BufNewFile,BufRead *.py
     \ set autoindent
     \ set fileformat=unix
 
-au BufNewFile,BufRead *.js, *.html, *.css
+au BufNewFile,BufRead *.js,*.html,*.css
     \ set tabstop=2
     \ set softtabstop=2
     \ set shiftwidth=2
