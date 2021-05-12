@@ -80,12 +80,12 @@ nnoremap <space> za
 let g:SimpylFold_docstring_preview=1
 
 au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop =4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
+    \ set tabstop=4 |
+    \ set softtabstop =4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
     \ set fileformat=unix
 
 au BufNewFile,BufRead *.js,*.html,*.css
@@ -104,6 +104,10 @@ syntax on
 
 
 " Some binds most used by me
+let mapleader=","
 
-map <F5> :NERDTreeToggle<CR>
+map <leader>v :vsplit
+map <leader>h :split
+map <F2> :NERDTreeToggle<CR>
+map <F3> :UndotreeToggle<CR>
 map <C-P> :FZF<CR>
