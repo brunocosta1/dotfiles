@@ -1,4 +1,5 @@
 syntax on
+filetype plugin on
 
 set noerrorbells
 set tabstop=4 softtabstop=4
@@ -34,7 +35,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-syntastic/syntastic'
 Plug 'nvie/vim-flake8'
 Plug 'jnurmine/Zenburn'
-
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -108,6 +109,8 @@ let mapleader=","
 
 map <leader>v :vsplit
 map <leader>h :split
+map <leader>Z :wq<CR>
+
 map <F2> :NERDTreeToggle<CR>
 map <F3> :UndotreeToggle<CR>
 map <C-P> :FZF<CR>
