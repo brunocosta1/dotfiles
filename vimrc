@@ -42,7 +42,7 @@ call plug#end()
 
 " Configuration of colors and others
 
-colorscheme gruvbox
+colorscheme atom-dark-256
 set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_underline=1
@@ -107,7 +107,7 @@ syntax on
 " Some binds most used by me
 let mapleader=","
 
-map <leader>v :vsplit
+map <leader>v :vsplit 
 map <leader>h :split
 map <leader>Z :wq<CR>
 
