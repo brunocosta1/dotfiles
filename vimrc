@@ -42,7 +42,7 @@ call plug#end()
 
 " Configuration of colors and others
 
-colorscheme atom-dark-256
+colorscheme gruvbox
 set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_underline=1
@@ -87,6 +87,7 @@ au BufNewFile,BufRead *.py
     \ set textwidth=79 |
     \ set expandtab |
     \ set autoindent |
+    \ set nowrap
     \ set fileformat=unix
 
 au BufNewFile,BufRead *.js,*.html,*.css
