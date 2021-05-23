@@ -1,4 +1,5 @@
 syntax on
+
 filetype plugin on
 
 set noerrorbells
@@ -18,7 +19,7 @@ set incsearch
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'nvim-telescope/telescope.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
