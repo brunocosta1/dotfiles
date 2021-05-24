@@ -34,6 +34,13 @@ set stl+=\ %c:%l/%L
 set stl+=\ %p%%
 set stl+=\ [%n]
 
+set stl+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set stl+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " -------------------- My plugins ----------------------------------------
 
@@ -129,4 +136,3 @@ map <F2> :NERDTreeToggle<CR>
 map <F3> :UndotreeToggle<CR>
 map <C-P> :FZF<CR>
 map <C-s> :source ~/.config/nvim/init.vim<CR>
-map <C-n> :Lex<CR> 
