@@ -1,0 +1,17 @@
+#!/usr/bin/sh
+
+session="dev-tmux"
+
+tmux new-session -d -s $session
+
+tmux rename-window -t 0 'main'
+
+tmux send-keys -t 'main' 'zsh' C-m 'clear' C-m
+tmux send-keys -t 'main' 'nvim' C-m
+
+tmux new-window -t $session:1 -n 'zsh'
+tmux split-window -v -t 'zsh'
+
+tmux send-keys -t '1.1' 'htop' C-m 
+
+tmux attach-session -t $session
