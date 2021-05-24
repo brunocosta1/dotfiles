@@ -12,6 +12,8 @@
     #~/.vimrc: 
         #path: vimrc
 
+    ~/.config/alacritty: alacritty
+    
     ~/.zsh: zsh
 
     ~/.config/nvim/init.vim:
