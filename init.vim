@@ -135,3 +135,4 @@ map <F2> :NERDTreeToggle<CR>
 map <F3> :UndotreeToggle<CR>
 map <C-P> :FZF<CR>
 map <C-s> :source ~/.config/nvim/init.vim<CR>
+noremap <leader>Y "+y
