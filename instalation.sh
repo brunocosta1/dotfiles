@@ -8,7 +8,7 @@ sudo apt update
 
 # Installing the core programs with apt
 
-sudo apt install fonts-powerline i3 i3blocks fzf fonts-firacode rofi neovim vim git build-essential tmux zsh cmake python3 python3-dev xsel
+sudo apt install fonts-powerline i3 i3blocks fzf fonts-firacode rofi neovim vim git build-essential tmux zsh cmake python3 python3-dev xsel feh compton compton-dconf
 
 # Dependencies for alacritty
 
