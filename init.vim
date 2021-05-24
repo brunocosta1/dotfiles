@@ -43,7 +43,7 @@ let g:syntastic_check_on_wq = 0
 
 " -------------------- My plugins ----------------------------------------
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'tpope/vim-fugitive'
