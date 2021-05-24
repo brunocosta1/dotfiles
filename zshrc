@@ -79,6 +79,7 @@ plugins=(
     zsh-syntax-highlighting    
     zsh-autosuggestions
     fzf
+    vi-mode
 )
 
 
