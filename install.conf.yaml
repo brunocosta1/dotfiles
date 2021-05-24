@@ -8,17 +8,25 @@
 - clean: ['~']
 - link:
     ~/.vim: vim
-    ~/.vimrc: 
-        path: vimrc
+
+    #~/.vimrc: 
+        #path: vimrc
+
+    ~/.zsh: zsh
+
+    ~/.config/nvim/init.vim:
+        path: init.vim
+
     ~/.zshrc:
         force: true
         path: zshrc 
+
     ~/.config/i3/config: 
         path: config
+
 - create:
     - ~/.vim/undo-history
     - ~/.vim/fzf_history
-
 - shell:
     - description: Install Curl
       command: "sudo apt install curl"
@@ -28,6 +36,6 @@
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
     - description: Install vim plugins
-      command: "vim +PlugInstall +qa"
+      command: "nvim +PlugInstall +qa"
     - description: Install YouCompleteMe vim plugin 
       command: "python3 ~/.vim/plugged/YouCompleteMe/install.py" # To install YouCompleteMe plugin correctly (requires python3 and cmake)
