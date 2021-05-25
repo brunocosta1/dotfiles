@@ -20,18 +20,18 @@ set encoding=utf-8
 
 " Status Line
 
-set stl=
-set stl+=%#PmenuSel#
-set stl+=\ %M
-set stl+=\ %y
-set stl+=\ %r
-set stl+=\ %F
+"set stl=
+"set stl+=%#PmenuSel#
+"set stl+=\ %M
+"set stl+=\ %y
+"set stl+=\ %r
+"set stl+=\ %F
 
-set stl+=\%=
-set stl+=%#DiffChange#
-set stl+=\ %c:%l/%L
-set stl+=\ %p%%
-set stl+=\ [%n]
+"set stl+=\%=
+"set stl+=%#DiffChange#
+"set stl+=\ %c:%l/%L
+"set stl+=\ %p%%
+"set stl+=\ [%n]
 
 set stl+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -59,6 +59,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'edkolev/tmuxline.vim'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -136,3 +137,6 @@ map <F3> :UndotreeToggle<CR>
 map <C-P> :FZF<CR>
 map <C-s> :source ~/.config/nvim/init.vim<CR>
 noremap <leader>Y "+y
+
+map <TAB> :bn<CR>
+map <S-TAB> :bp<CR>
