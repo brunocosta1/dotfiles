@@ -18,6 +18,8 @@ set nohlsearch
 set cursorline
 set encoding=utf-8
 
+
+
 " Status Line
 
 "set stl=
@@ -69,6 +71,9 @@ set termguicolors
 "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 colorscheme gruvbox
+au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+
 let g:gruvbox_italic=1
 let g:gruvbox_underline=1
 let g:gruvbox_undercurl=1
