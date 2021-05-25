@@ -58,7 +58,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tmhedberg/SimpylFold'
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdcommenter'
-Plug 'edkolev/tmuxline.vim'
 Plug 'vim-airline/vim-airline'
 
 call plug#end()
