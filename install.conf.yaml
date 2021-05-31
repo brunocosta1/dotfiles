@@ -19,12 +19,16 @@
     ~/.config/nvim/init.vim:
         path: init.vim
 
+    ~/.Xresources: Xresources
+
     ~/.zshrc:
         force: true
         path: zshrc 
 
     ~/.config/i3/config: 
         path: config
+
+    ~/dev-tmux: dev-tmux
 
 - create:
     - ~/.vim/undo-history
@@ -38,7 +42,7 @@
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
 
     - description: Install oh-my-zsh
-      command: "sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "
+      command: "sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)""
 
     - description: Install zsh-syntax-highlighting
       command: "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
@@ -48,5 +52,6 @@
 
     - description: Install vim plugins
       command: "nvim +PlugInstall +qa"
+
     - description: Install YouCompleteMe vim plugin 
       command: "python3 ~/.vim/plugged/YouCompleteMe/install.py" # To install YouCompleteMe plugin correctly (requires python3 and cmake)
