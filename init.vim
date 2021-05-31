@@ -53,7 +53,6 @@ Plug 'vim-utils/vim-man'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'powerline/powerline'
-Plug 'Valloric/YouCompleteMe', { 'commit':'d98f896' }
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
@@ -61,13 +60,15 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
+Plug 'oblitum/youcompleteme'
 
 call plug#end()
 
 
 " --------------------------Configuration of colors----------------------- 
 
-set termguicolors
+" set termguicolors (I disable it because i'm using urxvt)
+
 "let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 "let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 colorscheme gruvbox
