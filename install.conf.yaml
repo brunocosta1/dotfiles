@@ -7,7 +7,7 @@
         quiet: true
 - clean: ['~']
 - link:
-    ~/.vim: vim
+  #~/.vim: vim
 
     #~/.vimrc: 
         #path: vimrc
