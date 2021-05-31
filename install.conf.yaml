@@ -12,7 +12,7 @@
     #~/.vimrc: 
         #path: vimrc
 
-    ~/.config/alacritty: alacritty
+  #~/.config/alacritty: alacritty
     
     ~/.zsh: zsh
 
