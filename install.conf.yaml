@@ -14,12 +14,14 @@
 
   #~/.config/alacritty: alacritty
     
-    ~/.zsh: zsh
+    ~/.zsh: 
+        path: zsh
 
     ~/.config/nvim/init.vim:
         path: init.vim
 
-    ~/.Xresources: Xresources
+    ~/.Xresources: 
+        path: Xresources
 
     ~/.zshrc:
         force: true
@@ -28,14 +30,17 @@
     ~/.config/i3/config: 
         path: config
 
-    ~/dev-tmux: dev-tmux
+    ~/dev-tmux: 
+        path: dev-tmux
 
 - create:
     - ~/.vim/undo-history
     - ~/.vim/fzf_history
+
 - shell:
     - description: Install Curl
       command: "sudo apt install curl"
+
     
     - description: Install vim-plug
       command: "curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
