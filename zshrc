@@ -78,6 +78,7 @@ plugins=(
     git
     zsh-syntax-highlighting    
     zsh-autosuggestions
+    tmux
     fzf
 )
 
@@ -123,5 +124,5 @@ export TERM="xterm-256color"
 export DEFAULT_USER="$(whoami)" 
 
 alias v='nvim'
-
+alias vm='viman'
 
