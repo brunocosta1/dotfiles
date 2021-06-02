@@ -44,7 +44,7 @@ call plug#end()
 " Configuration of colors and others
 
 colorscheme gruvbox
-set termguicolors
+"set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_underline=1
 let g:gruvbox_undercurl=1
