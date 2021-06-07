@@ -189,3 +189,4 @@ bindsym $mod+Print exec gnome-screenshot -a
 
 exec --no-startup-id feh --bg-fill ~/Downloads/mar.jpg
 exec compton &
+exec xrdb ~/.Xresources
