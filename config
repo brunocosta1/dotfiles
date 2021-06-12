@@ -188,4 +188,5 @@ for_window [class="^.*"] border pixel 1
 bindsym $mod+Print exec gnome-screenshot -a 
 
 exec --no-startup-id feh --bg-fill ~/Downloads/mar.jpg
+exec --no-startup-id xrdb -merge ~/.Xresources
 exec compton &
