@@ -1,7 +1,8 @@
+" ------------------------------- General Settings  ----------------------------
+
 syntax on
 filetype plugin on
 
-" ------------------------------- General Settings  ----------------------------
 
 set noerrorbells
 set tabstop=4 softtabstop=4
@@ -60,6 +61,8 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'vim-syntastic/syntastic'
 Plug 'scrooloose/nerdcommenter'
 Plug 'vim-airline/vim-airline'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
 "Plug 'oblitum/youcompleteme'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --system-libclang' }
 
