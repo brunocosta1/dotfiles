@@ -13,17 +13,15 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
-
+set nohlsearch
+set cursorline
+set encoding=utf-8
 
 " My plugins 
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'nvim-telescope/telescope.nvim'
 Plug 'tpope/vim-fugitive'
-Plug 'https://github.com/leafgarland/typescript-vim'
-Plug 'vim-utils/vim-man'
-Plug 'rust-lang/rust.vim'
 Plug 'mbbill/undotree'
 Plug 'morhetz/gruvbox'
 Plug 'powerline/powerline'
@@ -44,6 +42,9 @@ call plug#end()
 " Configuration of colors and others
 
 colorscheme gruvbox
+au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
+
 "set termguicolors
 let g:gruvbox_italic=1
 let g:gruvbox_underline=1
