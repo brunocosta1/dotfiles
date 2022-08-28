@@ -1,0 +1,57 @@
+- default:
+    link:
+        relink: true
+        create: true 
+        force: true
+    shell: 
+        quiet: true
+- clean: ['~']
+- link:
+  #~/.vim: vim
+
+    #~/.vimrc: 
+        #path: vimrc
+
+  #~/.config/alacritty: alacritty
+    
+    ~/.zsh: 
+        path: zsh
+
+    ~/.config/nvim/init.vim:
+        path: init.vim
+
+    ~/.Xresources: 
+        path: Xresources
+
+    ~/.zshrc:
+        force: true
+        path: zshrc 
+
+    ~/.config/i3/config: 
+        path: config
+
+    ~/dev-tmux: 
+        path: dev-tmux
+
+- create:
+    - ~/.vim/undo-history
+    - ~/.vim/fzf_history
+
+- shell:
+    - description: Install Curl
+      command: "sudo apt install curl"
+
+    - description: Install oh-my-zsh
+      command: "sh -c $(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    - description: Install zsh-syntax-highlighting
+      command: "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
+
+    - description: Install zsh-autosuggestions
+      command: "git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
+
+    - description: Install vim plugins
+      command: "nvim +PlugInstall +qa"
+
+    - description: Install YouCompleteMe vim plugin 
+      command: "python3 ~/.vim/plugged/YouCompleteMe/install.py" # To install YouCompleteMe plugin correctly (requires python3 and cmake)
