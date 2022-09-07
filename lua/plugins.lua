@@ -46,8 +46,9 @@ packer.startup(function()
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-
-  use "numToStr/FTerm.nvim"
+  use { "akinsho/toggleterm.nvim", tag = '*', config = function()
+    require("toggleterm").setup()
+  end }
   use 'norcalli/nvim-colorizer.lua'
 
   use "rafamadriz/friendly-snippets"
@@ -60,7 +61,17 @@ packer.startup(function()
       require('Comment').setup()
     end
   }
+  
+  use({
+    "kylechui/nvim-surround",
+    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+    config = function()
+        require("nvim-surround").setup({
+            -- Configuration here, or leave empty to use defaults
+        })
+    end
+})
 
-  use 'mfussenegger/nvim-jdtls'
+  use { 'mfussenegger/nvim-jdtls', ft = { "java" } }
 end
 )

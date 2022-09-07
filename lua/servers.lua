@@ -43,7 +43,7 @@ lsp_installer.settings({
         }
 })
 
-local servers = { 'pyright', 'clangd', 'vimls', 'bashls', 'tsserver', 'cssls', 'html', 'solargraph', 'intelephense', 'perlpls', 'jsonls', 'sqls' }
+local servers = { 'jdtls', 'pyright', 'clangd', 'vimls', 'tsserver', 'cssls', 'html', 'solargraph', 'intelephense', 'perlpls', 'jsonls', 'sqls' }
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 

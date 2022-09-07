@@ -1,1 +1,1 @@
-require('FTerm')
+require('toggleterm').setup()
