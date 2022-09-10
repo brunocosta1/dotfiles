@@ -192,9 +192,5 @@ alias lt='ls --tree'
 export PATH="$HOME/lua-language-server/bin/Linux:$PATH"
 alias luamake=/home/bruno/lua-language-server/3rd/luamake/luamake
 
-export JDTLS_HOME=$HOME/.local/share/nvim/lsp/jdt-language-server/ 			#  contain  plugin  and  configs  The catalog of , from jdt-language-server-xxx.tar.gz Decompressed 
-#  Optional 
-export WORKSPACE=$HOME/.local/share/nvim/lsp/jdt-language-server/workspace/ #  If it is not set, the default is $HOME/workspace
-export JAVA_HOME=$HOME/.jdks/corretto-11.0.14.1/ 							#JDK The home directory , It is recommended to use JDK11, Use JDK8 Will report a mistake 
-export PATH=$JAVA_HOME/bin:$PATH:.
+
 
