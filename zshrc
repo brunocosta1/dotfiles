@@ -190,6 +190,7 @@ alias lt='ls --tree'
 
 
 export PATH="$HOME/lua-language-server/bin/Linux:$PATH"
+export PATH="$HOME/.local/bin/:$PATH"
 alias luamake=/home/bruno/lua-language-server/3rd/luamake/luamake
 
 
