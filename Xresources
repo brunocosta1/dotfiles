@@ -18,7 +18,7 @@ URxvt.scrollBar: false
 
 ! Fonts
 
-URxvt.font: xft:Hack Nerd Font Mono:pixelsize=20
+URxvt.font: xft:Hack\ Nerd\ Font\ Mono:pixelsize=25
 
 ! Colors
 ! -----------------------------------------------------------------------------
