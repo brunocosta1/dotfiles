@@ -72,6 +72,6 @@ packer.startup(function()
     end
 })
 
-  use { 'mfussenegger/nvim-jdtls', ft = { "java" } }
+  use 'mfussenegger/nvim-jdtls'
 end
 )
