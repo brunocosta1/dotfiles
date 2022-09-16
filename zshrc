@@ -14,7 +14,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="agnoster"
 
 SPACESHIP_PROMPT_ORDER=(
   time
@@ -192,6 +192,4 @@ alias lt='ls --tree'
 export PATH="$HOME/lua-language-server/bin/Linux:$PATH"
 export PATH="$HOME/.local/bin/:$PATH"
 alias luamake=/home/bruno/lua-language-server/3rd/luamake/luamake
-
-
 
