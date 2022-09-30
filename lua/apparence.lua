@@ -1,4 +1,4 @@
-vim.cmd[[colorscheme tokyonight]]
+vim.cmd[[colorscheme gruvbox]]
 require('nvim-treesitter.configs').setup{
 
         highlight = { enable = true},
@@ -7,7 +7,7 @@ require('nvim-treesitter.configs').setup{
 require('lualine').setup{
         options = {
 
-                theme = 'tokyonight'
+                theme = 'gruvbox'
         },
 }
 

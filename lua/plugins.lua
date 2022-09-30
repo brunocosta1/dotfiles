@@ -2,7 +2,10 @@ packer = require('packer')
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function()
-
+  use { "ellisonleao/gruvbox.nvim" }
+  use 'nanozuki/tabby.nvim'
+  use 'feline-nvim/feline.nvim'
+  use { "EdenEast/nightfox.nvim", tag = "v1.0.0" } -- Packer
   use 'nanotee/sqls.nvim'
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
@@ -61,17 +64,24 @@ packer.startup(function()
       require('Comment').setup()
     end
   }
-  
+
   use({
     "kylechui/nvim-surround",
     tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
+      require("nvim-surround").setup({
+        -- Configuration here, or leave empty to use defaults
+      })
     end
-})
+  })
 
   use 'mfussenegger/nvim-jdtls'
+  -- install without yarn or npm
+  use({
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end
 )
