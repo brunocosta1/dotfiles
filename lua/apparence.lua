@@ -1,4 +1,9 @@
-vim.cmd[[colorscheme nightfox]]
+vim.cmd[[colorscheme tokyonight]]
+require("tokyonight").setup({
+  style = "night",
+})
+
+
 require('nvim-treesitter.configs').setup{
 
         highlight = { enable = true},
@@ -7,7 +12,7 @@ require('nvim-treesitter.configs').setup{
 require('lualine').setup{
         options = {
 
-                theme = 'nightfox'
+                theme = 'tokyonight'
         },
 }
 

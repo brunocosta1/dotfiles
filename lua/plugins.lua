@@ -2,6 +2,16 @@ packer = require('packer')
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function()
+  use {
+    "ahmedkhalf/project.nvim",
+    config = function()
+      require("project_nvim").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
   use { "ellisonleao/gruvbox.nvim" }
   use 'nanozuki/tabby.nvim'
   use 'feline-nvim/feline.nvim'
