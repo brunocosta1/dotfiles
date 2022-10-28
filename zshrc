@@ -188,7 +188,8 @@ alias lt='ls --tree'
 
 
 
-
+pathdotfiles="$HOME/Documents/dotfiles"
+alias dotf="cd $pathdotfiles"
 export PATH="$HOME/lua-language-server/bin/Linux:$PATH"
 export PATH="$HOME/.local/bin/:$PATH"
 alias luamake=/home/bruno/lua-language-server/3rd/luamake/luamake
