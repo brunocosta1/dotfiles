@@ -14,7 +14,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="spaceship"
 
 SPACESHIP_PROMPT_ORDER=(
   time
@@ -110,8 +110,8 @@ plugins=(
     zsh-syntax-highlighting    
     zsh-autosuggestions
     tmux
-    vi-mode
     fzf
+    vi-mode
 )
 
 
@@ -174,7 +174,7 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 #export PERL_MM_OPT="INSTALL_BASE=/N/u/bruno/Carbonate/perl5"
 #export PERL5LIB="/N/u/bruno/Carbonate/perl5/lib/perl5:$PERL5LIB"
 #export PATH="/N/u/bruno/Carbonate/perl5/bin:$PATH"
-eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
+# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 # Needs to install lsd
 
@@ -188,9 +188,10 @@ alias lt='ls --tree'
 
 
 
+
 pathdotfiles="$HOME/Documents/dotfiles"
 alias dotf="cd $pathdotfiles"
-export PATH="$HOME/lua-language-server/bin/Linux:$PATH"
-export PATH="$HOME/.local/bin/:$PATH"
-alias luamake=/home/bruno/lua-language-server/3rd/luamake/luamake
-
+export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/cssls/node_modules/vscode-langservers-extracted/bin/vscode-css-language-server
+export PATH=$PATH:$HOME/.local/bin
+export PATH="$HOME/lua-language-server/bin/:$PATH"
+alias luamake=/home/brunocosta/lua-language-server/3rd/luamake/luamake
