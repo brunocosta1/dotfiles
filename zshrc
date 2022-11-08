@@ -34,13 +34,9 @@ SPACESHIP_PROMPT_ORDER=(
   rust
   julia
   docker
-  venv
-  pyenv
   dotnet
-  ember
   exec_time
   line_sep
-  vi_mode
   jobs
   exit_code
   char
@@ -109,7 +105,6 @@ plugins=(
     git
     zsh-syntax-highlighting    
     zsh-autosuggestions
-    tmux
     fzf
     vi-mode
 )
