@@ -2,6 +2,10 @@ packer = require('packer')
 vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function()
+  use { "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim"
+      }
+
   use {
     "ahmedkhalf/project.nvim",
     config = function()
@@ -35,7 +39,7 @@ packer.startup(function()
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
   use({ "petertriho/cmp-git", requires = "nvim-lua/plenary.nvim" })
-  use 'williamboman/nvim-lsp-installer'
+  -- use 'williamboman/nvim-lsp-installer'
   use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
   use {
     'nvim-telescope/telescope.nvim',
@@ -85,7 +89,6 @@ packer.startup(function()
     end
   })
 
-  use 'mfussenegger/nvim-jdtls'
   -- install without yarn or npm
   use({
     "iamcco/markdown-preview.nvim",
