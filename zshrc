@@ -154,6 +154,8 @@ alias v='nvim'
 alias vm='viman'
 
 . $HOME/.asdf/asdf.sh
+
+. ~/.asdf/plugins/java/set-java-home.zsh
 #
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
