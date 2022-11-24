@@ -37,7 +37,6 @@ set incsearch
 set nowrap
 set background=dark
 
-
 if &filetype ==# "python"
   set tabstop=4
   set shiftwidth=4
@@ -57,6 +56,9 @@ filetype plugin on
 let g:python_host_prog  = '/usr/bin/python2' 
 let g:python3_host_prog  = '/usr/bin/python3' 
 set completeopt=menu,menuone,noselect
+
+autocmd BufNewFile README.md 0r ~/skeletons/README.md
+autocmd BufNewFile *.c 0r ~/skeletons/main.c
 
 
 " set
