@@ -1,7 +1,14 @@
-vim.cmd[[colorscheme tokyonight]]
-require("tokyonight").setup({
-  style = "night",
+require("catppuccin").setup({
+  flavour = 'mocha',
+  background = {
+    light = 'latte',
+    dark = 'mocha'
+  }
+
+
+
 })
+vim.cmd[[colorscheme catppuccin]]
 
 
 require('nvim-treesitter.configs').setup{
@@ -12,7 +19,7 @@ require('nvim-treesitter.configs').setup{
 require('lualine').setup{
         options = {
 
-                theme = 'tokyonight'
+                theme = 'catppuccin'
         },
 }
 
