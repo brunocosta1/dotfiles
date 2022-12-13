@@ -1,22 +1,15 @@
 local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true}
+local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = ','
 
 
 -- Telescope
 
-map('n', '<leader>ff', ':Telescope find_files<cr>', { noremap = true})
-map('n', '<leader>fg', ':Telescope live_grep<cr>', { noremap = true})
-map('n', '<leader>fb', ':Telescope buffers<cr>', { noremap = true})
-map('n', '<leader>fh', ':Telescope help_tags<cr>', { noremap = true})
-
-
--- Terminal
-
-map('n', '<A-d>', '<CMD>lua require("FTerm").toggle()<CR>', opts)
-map('t', '<A-d>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
-map('t', '<A-q>', '<C-\\><C-n><CMD>lua require("FTerm").exit()<CR>', opts)
+map('n', '<leader>ff', ':Telescope find_files<cr>', { noremap = true })
+map('n', '<leader>fg', ':Telescope live_grep<cr>', { noremap = true })
+map('n', '<leader>fb', ':Telescope buffers<cr>', { noremap = true })
+map('n', '<leader>fh', ':Telescope help_tags<cr>', { noremap = true })
 
 
 -- Other bindings
@@ -33,7 +26,7 @@ map('i', 'jk', '<Esc>', opts)
 map('i', 'kj', '<Esc>', opts)
 map('n', "<C-s>", ":source ~/.config/nvim/init.vim<CR>", opts)
 map('', '<leader>y', '"+y<CR>', opts) -- bind to yank and copy
-map('', '<leader>c', '"+p<CR>', opts)
+map('', '<leader>p', '"+p<CR>', opts)
 map('', '<leader>v', ':vsplit', opts)
 map('', '<leader>h', ':split', opts)
 
@@ -53,7 +46,10 @@ vim.api.nvim_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()
 vim.api.nvim_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
 vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+
+vim.keymap.set('n', '<space>f', function () vim.lsp.buf.format { async = true} end, opts)
+-- vim.api.nvim_set_keymap('n', '<space>f','<cmd>lua function() vim.lsp.buf.format { async = true } end<CR>', opts)
 
 
 -- NvimTree
