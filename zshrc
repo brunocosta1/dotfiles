@@ -15,6 +15,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster" # set by `omz`
+source ~/.oh-my-zsh/themes/catppuccin_mocha-zsh-syntax-highlighting.zsh
 
 SPACESHIP_PROMPT_ORDER=(
   time
