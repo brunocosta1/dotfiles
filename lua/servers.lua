@@ -27,7 +27,7 @@ local on_attach = function(client, bufnr)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
-local servers = { 'sumneko_lua', 'jdtls', 'pyright', 'clangd', 'vimls', 'tsserver', 'cssls', 'html', 'solargraph', 'intelephense', 'jsonls', 'sqls', 'perlnavigator' }
+local servers = {'rust_analyzer', 'sumneko_lua', 'pyright', 'clangd', 'vimls', 'tsserver', 'cssls', 'html', 'solargraph', 'intelephense', 'jsonls', 'sqls', 'perlnavigator' }
 
 require("mason").setup()
 require("mason-lspconfig").setup({
