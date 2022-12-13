@@ -6,6 +6,8 @@ packer.startup(function()
         "williamboman/mason-lspconfig.nvim"
       }
 
+  use { "catppuccin/nvim", as = "catppuccin" }
+
   use {
     "ahmedkhalf/project.nvim",
     config = function()
