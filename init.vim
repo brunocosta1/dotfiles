@@ -9,8 +9,8 @@ if !has('gui_running') && &term =~ '^\%(screen\|tmux\)'
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 
-syntax on
 set termguicolors
+syntax on
 
 
 lua << EOF
