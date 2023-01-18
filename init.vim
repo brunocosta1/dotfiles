@@ -59,6 +59,7 @@ set completeopt=menu,menuone,noselect
 
 autocmd BufNewFile README.md 0r ~/skeletons/README.md
 autocmd BufNewFile *.c 0r ~/skeletons/main.c
+autocmd BufNewFile *.py 0r ~/skeletons/main.py
 
 
 " set
