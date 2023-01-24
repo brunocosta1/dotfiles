@@ -1,0 +1,75 @@
+#!/usr/bin/sh
+
+NVIM_DIR="$HOME/.config/nvim"
+ALACRITTY_DIR="$HOME/.config/alacritty/"
+ZSH_DIR="$HOME"
+
+dependencies(){
+
+  echo "Installing dependencies..."
+  sudo apt install build-essential git cargo npm nodejs python3-dev python3-pip snapd
+
+  echo "Installing neovim..."
+  sudo apt install `curl https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb`
+
+}
+
+make_zsh(){
+
+  echo "Configuring zsh..."
+
+  ln -fs $(pwd)/zshrc $home/.zshrc
+  ln -fs $(pwd)/oh-my-zsh $home/.oh-my-zsh
+
+}
+
+make_neovim(){
+
+  echo "Configuring neovim..."
+
+  if [ ! -d "$NVIM_DIR" ]; then
+    mkdir $NVIM_DIR
+  fi
+
+  ln -fs $(pwd)/init.vim $NVIM_DIR
+
+  if [ ! -d "$NVIM_DIR/lua" ]; then
+    mkdir $NVIM_DIR/lua
+  fi
+
+  ln -fs $(pwd)/lua/* $NVIM_DIR/lua/
+
+  echo "Installing packer nvim..."
+
+  git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+  nvim -c "PackerInstall"
+
+}
+
+make_alacritty(){
+
+  echo "Installing alacritty..."
+  sudo cargo install alacritty
+
+  echo "Configuring alacritty..."
+
+ if [ ! -d "$ALACRITTY_DIR" ]; then
+   mkdir $ALACRITTY_DIR
+ fi
+
+ ln -fs $(pwd)/alacritty/* $ALACRITTY_DIR
+
+}
+
+
+dependencies
+
+make_neovim
+
+make_zsh
+
+make_alacritty
+
+
