@@ -3,8 +3,8 @@ vim.cmd [[packadd packer.nvim]]
 
 packer.startup(function()
   use { "williamboman/mason.nvim",
-        "williamboman/mason-lspconfig.nvim"
-      }
+    "williamboman/mason-lspconfig.nvim"
+  }
 
   use { "catppuccin/nvim", as = "catppuccin" }
 
@@ -92,11 +92,8 @@ packer.startup(function()
   })
 
   -- install without yarn or npm
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
 
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 end
 )
