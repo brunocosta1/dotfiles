@@ -25,6 +25,12 @@ make_zsh(){
   ln -fs $(pwd)/zshrc $ZSH_DIR/.zshrc
   ln -fs $(pwd)/oh-my-zsh $ZSH_DIR/.oh-my-zsh
 
+  echo "Downloading omz"
+  sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+  echo "Downloading zsh-syntax-highlight"
+  echo "Downloading zsh-autosuggestions"
+
 }
 
 make_neovim(){
@@ -55,7 +61,7 @@ make_neovim(){
 make_alacritty(){
 
   echo "Installing alacritty..."
-  sudo cargo install alacritty
+  cargo install alacritty lsd
 
   echo "Configuring alacritty..."
 
