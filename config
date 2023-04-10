@@ -216,7 +216,7 @@ for_window [class="^.*"] border pixel 2
 bindsym $mod+Print exec gnome-screenshot -a 
 
 exec_always --no-startup-id numlockx on
-exec --no-startup-id feh --bg-scale ~/Downloads/waves.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper2.jpg
 exec picom
 
 
