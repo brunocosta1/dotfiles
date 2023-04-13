@@ -220,8 +220,8 @@ exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper2.jpg
 exec picom
 
 
-bindsym XF86MonBrightnessDown exec sudo decreaseBrightness
-bindsym XF86MonBrightnessUp exec sudo increaseBrightness
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl 5%-
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl +5%
 
 # set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
 # set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
