@@ -21,7 +21,7 @@ fi
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
+ZSH_THEME="robbyrussell" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -127,7 +127,7 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-export TERM="xterm-256color"
+export TERM="screen-256color"
 
 export DEFAULT_USER="$(whoami)" 
 
@@ -176,6 +176,9 @@ alias luamake=/home/brunocosta/lua-language-server/3rd/luamake/luamake
 
 export FLYCTL_INSTALL="/home/brunocosta/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
