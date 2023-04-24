@@ -22,7 +22,7 @@ packer.startup(function()
   use 'nanozuki/tabby.nvim'
   use 'feline-nvim/feline.nvim'
   use { "EdenEast/nightfox.nvim", tag = "v1.0.0" } -- Packer
-  use 'nanotee/sqls.nvim'
+  -- use 'nanotee/sqls.nvim'
   use 'wbthomason/packer.nvim'
   use 'folke/tokyonight.nvim'
   use 'arcticicestudio/nord-vim'
