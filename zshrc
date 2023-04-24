@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -22,7 +22,6 @@ fi
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell" # set by `omz`
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -144,7 +143,7 @@ fpath=(${ASDF_DIR}/completions $fpath)
 
 autoload -Uz compinit && compinit
 
-alias vc='nvim $HOME/.config/nvim/init.vim'
+alias vc='nvim ~/.config/nvim'
 
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -172,13 +171,8 @@ alias dotf="cd $pathdotfiles"
 export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/cssls/node_modules/vscode-langservers-extracted/bin/vscode-css-language-server
 export PATH=$PATH:$HOME/.local/bin
 export PATH="$HOME/lua-language-server/bin/:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin/:$PATH"
 alias luamake=/home/brunocosta/lua-language-server/3rd/luamake/luamake
 
-export FLYCTL_INSTALL="/home/brunocosta/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
-
-if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
-
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
