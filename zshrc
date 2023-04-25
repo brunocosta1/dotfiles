@@ -21,7 +21,7 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell" # set by `omz`
+ZSH_THEME="powerlevel10k/powerlevel10k" # set by `omz`
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -143,7 +143,7 @@ fpath=(${ASDF_DIR}/completions $fpath)
 
 autoload -Uz compinit && compinit
 
-alias vc='nvim ~/.config/nvim'
+alias vc='nvim $HOME/.config/nvim/init.vim'
 
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
@@ -171,8 +171,7 @@ alias dotf="cd $pathdotfiles"
 export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/cssls/node_modules/vscode-langservers-extracted/bin/vscode-css-language-server
 export PATH=$PATH:$HOME/.local/bin
 export PATH="$HOME/lua-language-server/bin/:$PATH"
-export PATH="$HOME/.config/composer/vendor/bin/:$PATH"
 alias luamake=/home/brunocosta/lua-language-server/3rd/luamake/luamake
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
