@@ -1,6 +1,6 @@
 import:
   # uncomment the flavour you want below:
-  - ~/.config/alacritty/rose-pine/rose-pine-moon.yml
+  - ~/.config/alacritty/tokyonight/tokyonight_moon.yml
  # - ~/.config/alacritty/catppuccin/catppuccin-macchiato.yml
  # - ~/.config/alacritty/catppuccin/catppuccin-frappe.yml
  # - ~/.config/alacritty/catppuccin/catppuccin-latte.yml
@@ -162,7 +162,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 13.0
+  size: 10.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
