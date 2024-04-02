@@ -133,6 +133,8 @@ export DEFAULT_USER="$(whoami)"
 
 alias v='nvim'
 alias vm='viman'
+alias t='tmux'
+alias tn='tmux new-session'
 
 . $HOME/.asdf/asdf.sh
 
