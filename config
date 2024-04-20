@@ -223,6 +223,12 @@ exec picom
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl 5%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl +5%
 
+bindsym Control+Mod1+l exec "~/Scripts/script_lock.sh"
+
+#exec "xautolock -detectsleep -time 25 -locker ~/Scripts/script_lock.sh"
+
+
+
 # set $mode_gaps Gaps: (o)uter, (i)nner, (h)orizontal, (v)ertical, (t)op, (r)ight, (b)ottom, (l)eft
 # set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 # set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
