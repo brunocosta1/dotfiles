@@ -223,9 +223,10 @@ exec picom
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl 5%-
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl +5%
 
-bindsym Control+Mod1+l exec "~/Scripts/script_lock.sh"
 
-#exec "xautolock -detectsleep -time 25 -locker ~/Scripts/script_lock.sh"
+# exec "xautolock -detectsleep -time 0.01 -locker \"sh /home/brunocosta/Scripts/script_lock.sh\""
+
+
 
 
 
@@ -349,3 +350,10 @@ bindsym Control+Mod1+l exec "~/Scripts/script_lock.sh"
 #         bindsym Return mode "$mode_gaps"
 #         bindsym Escape mode "default"
 # }
+
+# Bloqueia a tela com Ctrl + Alt + l
+# bindsym Control+Mod1+l exec "i3lock -c 00008B"
+
+
+bindsym Control+Mod1+l exec "~/Scripts/script_lock.sh"
+ 
