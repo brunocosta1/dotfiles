@@ -1,0 +1,14 @@
+
+[font]
+size = 10.0
+
+[font.normal]
+family = "FiraCode NerdFont" 
+style = "Regular"
+
+[window]
+decorations = "none"
+opacity = 1
+
+[general]
+import = ["~/.config/alacritty/themes/themes/tokyo-night.toml"]

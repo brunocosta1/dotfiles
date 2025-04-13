@@ -138,13 +138,16 @@ alias tn='tmux new-session'
 
 . $HOME/.asdf/asdf.sh
 
-. ~/.asdf/plugins/java/set-java-home.zsh
+export PATH="$HOME/go/bin:$PATH"
+export ASDF_DATA_DIR="/home/brunocosta/.asdf"
+export PATH="$ASDF_DATA_DIR/shims:$PATH"
+
+# . ~/.asdf/plugins/java/set-java-home.zsh
 #
 # append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
+fpath=(${ASDF_DATA_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 
-autoload -Uz compinit && compinit
 
 alias vc='nvim $HOME/.config/nvim/init.vim'
 
@@ -159,6 +162,8 @@ fpath+=${ZDOTDIR:-~}/.zsh_functions
 # Needs to install lsd
 
 export PATH=~/.cargo/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
+
 
 alias ls='lsd'
 alias l='lsd -l'
@@ -185,3 +190,13 @@ if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH=~/.npm-global/bin:$PATH
+
+zstyle ':completation:*' menu select
+
+autoload -Uz compinit 
+compinit
+
+
+export SPRING_DATA_SOURCE_USERNAME="teste"
+export SPRING_DATA_SOURCE_PASSWORD="teste123"
+
