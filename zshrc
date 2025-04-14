@@ -13,15 +13,15 @@
 
 # To choice pure theme
 
-# fpath+=$HOME/.zsh/pure
-# autoload -U promptinit; promptinit
-# prompt pure
+fpath+=$HOME/.zsh/pure
+autoload -U promptinit; promptinit
+prompt pure
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster" # set by `omz`
+# ZSH_THEME="agnoster" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -127,7 +127,7 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-export TERM="screen-256color"
+# export TERM="screen-256color"
 
 export DEFAULT_USER="$(whoami)" 
 
@@ -149,15 +149,9 @@ fpath=(${ASDF_DATA_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
 
 
-alias vc='nvim $HOME/.config/nvim/init.vim'
-
+alias vc='nvim $HOME/.config/nvim/'
 
 fpath+=${ZDOTDIR:-~}/.zsh_functions
-
-#export PERL_MM_OPT="INSTALL_BASE=/N/u/bruno/Carbonate/perl5"
-#export PERL5LIB="/N/u/bruno/Carbonate/perl5/lib/perl5:$PERL5LIB"
-#export PATH="/N/u/bruno/Carbonate/perl5/bin:$PATH"
-# eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib)"
 
 # Needs to install lsd
 
@@ -195,8 +189,3 @@ zstyle ':completation:*' menu select
 
 autoload -Uz compinit 
 compinit
-
-
-export SPRING_DATA_SOURCE_USERNAME="teste"
-export SPRING_DATA_SOURCE_PASSWORD="teste123"
-
