@@ -18,6 +18,10 @@ return {
       colorscheme = "gruvbox",
     },
   },
+  {
+    "echasnovski/mini.nvim",
+    version = false,
+  },
 
   -- change trouble config
   {
@@ -32,10 +36,16 @@ return {
   -- override nvim-cmp and add cmp-emoji
   {
     "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
+    commit = "b356f2c", -- necessário para rodar alguns snipets do react
+    pin = true,
+    dependencies = {
+      "hrsh7th/cmp-emoji",
+      -- "mlaursen/vim-react-snippets",
+    },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       table.insert(opts.sources, { name = "emoji" })
+      -- require("vim-react-snippets").lazy_load()
     end,
   },
 

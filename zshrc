@@ -136,18 +136,18 @@ alias vm='viman'
 alias t='tmux'
 alias tn='tmux new-session'
 
-. $HOME/.asdf/asdf.sh
+# . $HOME/.asdf/asdf.sh
 
 export PATH="$HOME/go/bin:$PATH"
 export ASDF_DATA_DIR="/home/brunocosta/.asdf"
-export PATH="$ASDF_DATA_DIR/shims:$PATH"
+export PATH="${ASDF_DATA_DIR}/shims:$PATH"
+
 
 # . ~/.asdf/plugins/java/set-java-home.zsh
 #
 # append completions to fpath
 fpath=(${ASDF_DATA_DIR}/completions $fpath)
 # initialise completions with ZSH's compinit
-
 
 alias vc='nvim $HOME/.config/nvim/'
 
@@ -175,6 +175,8 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH="$HOME/lua-language-server/bin/:$PATH"
 alias luamake=/home/brunocosta/lua-language-server/3rd/luamake/luamake
 
+
+
 export FLYCTL_INSTALL="/home/brunocosta/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
@@ -189,3 +191,13 @@ zstyle ':completation:*' menu select
 
 autoload -Uz compinit 
 compinit
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=19'
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PYTHONPATH=/opt/ibm/ILOG/CPLEX_Studio2211/cplex/python/3.10/x86-64_linux/

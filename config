@@ -41,7 +41,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec alacritty;focus
 
 # start a Firefox
 bindsym $mod+n exec firefox
@@ -50,7 +50,7 @@ bindsym $mod+n exec firefox
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show drun -lines 3 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+bindsym $mod+d exec rofi -show drun -show-icons -lines 3 -eh 2 -fullscreen -width 100 -opacity "85" -bg "#ddddddd" -fg "#222222" -bw 0 -padding 300
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -209,14 +209,14 @@ bar {
         }
 }
 
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border normal 2
 
 # For screenshots
 
 bindsym $mod+Print exec gnome-screenshot -a 
 
 exec_always --no-startup-id numlockx on
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper2.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec picom
 
 
@@ -351,9 +351,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl +5%
 #         bindsym Escape mode "default"
 # }
 
-# Bloqueia a tela com Ctrl + Alt + l
-# bindsym Control+Mod1+l exec "i3lock -c 00008B"
+bindsym $mod+x exec /home/brunocosta/.config/script/lock
 
 
-bindsym Control+Mod1+l exec "~/Scripts/script_lock.sh"
- 
+# Display
+exec_always xrandr --output eDP-1 --mode 1920x1080
