@@ -63,13 +63,15 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 fi
 
-# 5. ASDF & PHP
+# 5. ASDF
 if [ ! -d "$HOME/.asdf" ]; then
-  echo -e "${GREEN}🛠️ Instalando asdf e plugin PHP...${NC}"
-  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+  echo -e "${GREEN}🛠️ Instalando asdf e plugins...${NC}"
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.18.0
   # Carregar asdf temporariamente para este script
   . "$HOME/.asdf/asdf.sh"
   asdf plugin add php
+  asdf plugin add node
+
 fi
 
 # 6. Tmux Plugin Manager (TPM)
