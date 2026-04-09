@@ -1,9 +1,0 @@
-#!/usr/bin/sh
-
-path_dotfiles=$(pwd)
-
-echo "Configuring neovim with lazyvim..."
-ln -fs $path_dotfiles/nvim $HOME/.config/
-
-echo "Configuring alacritty, restart to apply configurations"
-ln -fs $path_dotfiles/alacritty $HOME/.config/
