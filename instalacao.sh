@@ -20,9 +20,26 @@ else
   echo -e "${GREEN}🐧 Instalando pacotes Linux...${NC}"
   sudo apt update
   # Dependências essenciais + as necessárias para compilar PHP no asdf
-  sudo apt install -y nvim tmux zsh git curl alacritty stow ripgrep fd-find fzf \
+  sudo apt install -y tmux zsh git curl alacritty stow ripgrep fd-find fzf \
     build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
     libsqlite3-dev libxml2-dev libcurl4-openssl-dev libonig-dev libzip-dev
+fi
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  echo -e "${GREEN}🐧 Instalando Neovim estável via GitHub...${NC}"
+
+  # Baixa o binário oficial mais recente (v0.10+ atualmente)
+  curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+
+  # Remove instalações antigas e extrai a nova em /opt
+  sudo rm -rf /opt/nvim
+  sudo tar -C /opt -xzf nvim-linux64.tar.gz
+
+  sudo ln -sfn /opt/nvim-linux64/bin/nvim /usr/local/bin/nvim
+  # Cria o link simbólico para ficar disponível no PATH
+
+  # Limpa o arquivo baixado
+  rm nvim-linux64.tar.gz
 fi
 
 # 2. Dotfiles
