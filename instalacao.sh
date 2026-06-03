@@ -83,13 +83,28 @@ fi
 
 # 7. Symlinks (Vinculando seu repo ao sistema)
 echo -e "${GREEN}🔗 Criando links simbólicos...${NC}"
-mkdir -p ~/.config
+mkdir -p ~/.config ~/.config/i3
 ln -sfn "$DOTFILES_DIR/nvim" ~/.config/nvim
 ln -sfn "$DOTFILES_DIR/alacritty" ~/.config/alacritty
 ln -sfn "$DOTFILES_DIR/.zshrc" "$HOME/.zshrc"
 ln -sfn "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
+ln -sfn "$DOTFILES_DIR/config" ~/.config/i3/config
+ln -sfn "$DOTFILES_DIR/i3blocks.conf" ~/.config/i3/i3blocks.conf
+ln -sfn "$DOTFILES_DIR/lock" ~/.config/i3/lock
+ln -sfn "$DOTFILES_DIR/monitors.sh" ~/.config/i3/monitors.sh
+
+# 8. Dependências do i3lock-color
+echo -e "${GREEN}🔒 Instalando i3lock-color...${NC}"
+sudo apt-get install -y autoconf gcc make pkg-config libpam0g-dev libcairo2-dev \
+  libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev \
+  libxcb-image0-dev libxcb-util-dev libxcb-xrm-dev libxcb-randr0-dev libxcb-xinerama0-dev \
+  libxkbcommon-dev libxkbcommon-x11-dev libgif-dev python3-pil
+git clone https://github.com/Raymo111/i3lock-color.git /tmp/i3lock-color
+cd /tmp/i3lock-color && autoreconf -i && ./configure && make -j$(nproc) && sudo make install
+cd "$DOTFILES_DIR"
 
 echo -e "${BLUE}--- SETUP FINALIZADO ---${NC}"
 echo -e "1. Abra o Neovim para o LazyVim instalar os plugins automaticamente."
 echo -e "2. No Tmux, pressione 'prefix + I' para instalar os plugins do TPM."
 echo -e "3. Rode 'asdf install php latest' para finalizar a instalação do PHP."
+echo -e "4. Coloque seu wallpaper em ~/Imagens/wallpaper.jpg"

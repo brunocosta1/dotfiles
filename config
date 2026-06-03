@@ -24,7 +24,7 @@ font pango: MesloLGS NF 12
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -123,6 +123,10 @@ set $workspace1 "1: Firefox "
 set $workspace2 "2: Terminal "
 set $workspace3 "3: Spotify "
 
+workspace $workspace1 output DP-1
+workspace $workspace2 output HDMI-1
+workspace $workspace3 output DP-1
+
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -181,15 +185,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color #282a36
-set $inactive-bg-color #282a36
-set $text-color #f3f4f5
-set $inactive-text-color #676e7d
-set $urgent-bg-color    #E53935
+set $bg-color           #0d0d1a
+set $inactive-bg-color  #1a0a2e
+set $text-color         #e8d5ff
+set $inactive-text-color #6b4e8a
+set $urgent-bg-color    #cc0066
+set $focused-ws-bg      #4a1272
+set $focused-ws-border  #7c3aed
 
-client.focused      $bg-color       $bg-color       $text-color     #00ff00
-client.unfocused    $inactive-bg-color  $inactive-bg-color  $inactive-text-color  #00ff00
-client.focused_inactive $inactive-bg-color  $inactive-bg-color  $text-color #00ff00
+client.focused          $focused-ws-border  $focused-ws-bg      $text-color         $focused-ws-border
+client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color #1a0a2e
+client.focused_inactive $inactive-bg-color  $inactive-bg-color  $text-color         #1a0a2e
+client.urgent           $urgent-bg-color    $urgent-bg-color    #ffffff             $urgent-bg-color
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -199,24 +206,28 @@ bar {
         position top
 
         colors {
+            separator           #6b4e8a
+            background          #0d0d1a
+            statusline          #e8d5ff
 
-            separator #757575
-            background $bg-color
-
-            focused_workspace    $bg-color   $bg-color   $text-color
-            inactive_workspace   $inactive-bg-color  $inactive-bg-color  $inactive-text-color
-
+            focused_workspace   #7c3aed   #4a1272   #e8d5ff
+            active_workspace    #4a1272   #2d0a50   #b39ddb
+            inactive_workspace  #1a0a2e   #0d0d1a   #6b4e8a
+            urgent_workspace    #cc0066   #cc0066   #ffffff
+            binding_mode        #cc0066   #cc0066   #ffffff
         }
 }
 
-for_window [class="^.*"] border normal 2
+default_border none
+default_floating_border none
+
 
 # For screenshots
 
 bindsym $mod+Print exec gnome-screenshot -a 
 
 exec_always --no-startup-id numlockx on
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
+exec --no-startup-id feh --bg-scale ~/Imagens/wallpaper.jpg
 exec picom
 
 
@@ -351,8 +362,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl +5%
 #         bindsym Escape mode "default"
 # }
 
-bindsym $mod+x exec /home/brunocosta/.config/script/lock
+bindsym $mod+x exec ~/.config/i3/lock
 
+exec_always --no-startup-id ~/.config/i3/monitors.sh
 
 # Display
-exec_always xrandr --output eDP-1 --mode 1920x1080
+# exec_always xrandr --output e-1 --mode 1920x1080

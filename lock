@@ -1,36 +1,54 @@
 #!/bin/sh
+WALLPAPER="$HOME/Imagens/wallpaper.jpg"
+LOCKBG="/tmp/i3lock_bg.png"
 
-BLANK='#00000000'
-CLEAR='#ffffff22'
-DEFAULT='#00897bE6'
-TEXT='#00897bE6'
-WRONG='#880000bb'
-VERIFYING='#00564dE6'
+python3 - "$WALLPAPER" "$LOCKBG" << 'EOF'
+import sys, re, subprocess, os
+from PIL import Image
 
-i3lock \
-  --insidever-color=$CLEAR \
-  --ringver-color=$VERIFYING \
-  \
-  --insidewrong-color=$CLEAR \
-  --ringwrong-color=$WRONG \
-  \
-  --inside-color=$BLANK \
-  --ring-color=$DEFAULT \
-  --line-color=$BLANK \
-  --separator-color=$DEFAULT \
-  \
-  --verif-color=$TEXT \
-  --wrong-color=$TEXT \
-  --time-color=$TEXT \
-  --date-color=$TEXT \
-  --layout-color=$TEXT \
-  --keyhl-color=$WRONG \
-  --bshl-color=$WRONG \
-  \
-  --screen 1 \
-  --blur 9 \
+wallpaper, output = sys.argv[1], sys.argv[2]
+
+xrandr = subprocess.run(['xrandr', '--current'], capture_output=True, text=True).stdout
+monitors = [(int(w), int(h), int(x), int(y))
+            for w, h, x, y in re.findall(r'(\d+)x(\d+)\+(\d+)\+(\d+)', xrandr)]
+
+if not monitors:
+    monitors = [(1920, 1080, 0, 0)]
+
+total_w = max(x + w for w, h, x, y in monitors)
+total_h = max(y + h for w, h, x, y in monitors)
+
+canvas = Image.new('RGB', (total_w, total_h))
+
+if os.path.exists(wallpaper):
+    img = Image.open(wallpaper)
+else:
+    img = Image.new('RGB', (total_w, total_h), color=(13, 13, 26))
+
+for w, h, x, y in monitors:
+    canvas.paste(img.resize((w, h), Image.LANCZOS), (x, y))
+
+canvas.save(output)
+EOF
+
+exec i3lock \
+  --image="$LOCKBG" \
   --clock \
   --indicator \
-  --time-str="%H:%M:%S" \
-  --date-str="%A, %Y-%m-%d" \
-  --keylayout 1
+  --time-str="%H:%M" \
+  --date-str="%A, %d de %B de %Y" \
+  --time-color=e8d5ffff \
+  --date-color=b39ddbff \
+  --inside-color=1a0a2eaa \
+  --ring-color=7c3aedff \
+  --ringver-color=9575cdff \
+  --ringwrong-color=cc0066ff \
+  --insidever-color=1a0a2eaa \
+  --insidewrong-color=2d0a50aa \
+  --keyhl-color=e8d5ffff \
+  --bshl-color=cc0066ff \
+  --separator-color=00000000 \
+  --line-color=00000000 \
+  --verif-color=e8d5ffff \
+  --wrong-color=cc0066ff \
+  --nofork
