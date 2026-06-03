@@ -23,6 +23,11 @@ return {
     version = false,
   },
 
+  {
+    "kiddos/gemini.nvim",
+    opts = {},
+  },
+
   -- change trouble config
   {
     "folke/trouble.nvim",

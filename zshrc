@@ -21,7 +21,7 @@ prompt pure
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="agnoster" # set by `omz`
+# ZSH_THEME="robbyrussell" # set by `omz`
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -88,6 +88,7 @@ plugins=(
     fzf
     vi-mode
     tmux
+    asdf
 )
 
 
@@ -139,7 +140,7 @@ alias tn='tmux new-session'
 # . $HOME/.asdf/asdf.sh
 
 export PATH="$HOME/go/bin:$PATH"
-export ASDF_DATA_DIR="/home/brunocosta/.asdf"
+export ASDF_DATA_DIR="$HOME/.asdf"
 export PATH="${ASDF_DATA_DIR}/shims:$PATH"
 
 
@@ -201,3 +202,22 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 export PYTHONPATH=/opt/ibm/ILOG/CPLEX_Studio2211/cplex/python/3.10/x86-64_linux/
+# export PATH="$HOME/develop/flutter/bin:$PATH"
+export FLUTTER_ROOT="$(asdf where flutter 2>/dev/null)"
+alias vz="nvim $HOME/.zshrc"
+alias sz="source $HOME/.zshrc"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+poweroff() {
+  echo -n "Bateu o ponto? (s/N): "
+  read -r resposta
+  if [[ "$resposta" =~ ^([sS][iI]|[sS])$ ]]; then
+    command poweroff
+  else
+    echo "Bata o ponto."
+  fi
+}
+
+# opencode
+export PATH="$HOME/.opencode/bin:$PATH"

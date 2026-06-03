@@ -118,6 +118,8 @@ alias sz="source $HOME/.zshrc"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
+export PATH="$PATH:/usr/local/go/bin"
+
 export PATH="$HOME/.cargo/bin:$PATH"
 # append completions to fpath
 fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
