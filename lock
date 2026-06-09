@@ -1,7 +1,10 @@
 #!/bin/sh
 WALLPAPER="$HOME/Imagens/wallpaper.jpg"
-LOCKBG="/tmp/i3lock_bg.png"
+LOCKBG="$HOME/.cache/i3lock_bg.png"
 
+# Só regenera a imagem se ainda não existir ou se o wallpaper mudou.
+# Assim o i3lock sobe instantaneamente e não deixa a tela exposta.
+if [ ! -f "$LOCKBG" ] || [ "$WALLPAPER" -nt "$LOCKBG" ]; then
 python3 - "$WALLPAPER" "$LOCKBG" << 'EOF'
 import sys, re, subprocess, os
 from PIL import Image
@@ -30,6 +33,7 @@ for w, h, x, y in monitors:
 
 canvas.save(output)
 EOF
+fi
 
 exec i3lock \
   --image="$LOCKBG" \
