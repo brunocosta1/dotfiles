@@ -35,7 +35,7 @@ canvas.save(output)
 EOF
 fi
 
-exec i3lock \
+i3lock \
   --image="$LOCKBG" \
   --clock \
   --indicator \
@@ -54,5 +54,7 @@ exec i3lock \
   --separator-color=00000000 \
   --line-color=00000000 \
   --verif-color=e8d5ffff \
-  --wrong-color=cc0066ff \
-  --nofork
+  --wrong-color=cc0066ff &
+
+xset dpms force off
+wait

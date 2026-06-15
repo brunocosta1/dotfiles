@@ -364,7 +364,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl +5%
 
 bindsym $mod+x exec ~/.config/i3/lock
 
-exec_always --no-startup-id ~/.config/i3/monitors.sh
+# exec_always --no-startup-id ~/.config/i3/monitors.sh
+exec --no-startup-id xrandr --output HDMI-1 --right-of DP-1
 
 # Display
 # exec_always xrandr --output e-1 --mode 1920x1080
