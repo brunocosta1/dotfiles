@@ -226,6 +226,11 @@ default_floating_border none
 
 bindsym $mod+Print exec gnome-screenshot -a 
 
+bindsym --release Shift+Print exec --no-startup-id "maim -s -u | xclip -selection clipboard -t image/png -i"
+bindsym Print exec --no-startup-id "maim -u | xclip -selection clipboard -t image/png -i"
+
+
+
 exec_always --no-startup-id numlockx on
 exec --no-startup-id feh --bg-scale ~/Imagens/wallpaper.jpg
 exec picom

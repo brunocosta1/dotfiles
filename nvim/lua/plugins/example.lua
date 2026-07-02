@@ -24,6 +24,13 @@ return {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      indent = { enable = false },
+    },
+  },
+
+  {
     "kiddos/gemini.nvim",
     opts = {},
   },
