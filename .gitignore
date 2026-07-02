@@ -3,3 +3,8 @@ config/dconf/user
 vim/plugged/vim-rtags
 vim/.netrwhist
 
+# Secrets — nunca versionar
+.secrets
+*.secret
+.env
+

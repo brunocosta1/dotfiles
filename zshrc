@@ -219,5 +219,10 @@ poweroff() {
   fi
 }
 
+alias trabalhodeontem="git log --oneline --since="yesterday 08:00" --until="08:00""
+
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
+
+# Secrets (não versionado — ver ~/.secrets)
+[ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
