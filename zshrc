@@ -226,3 +226,8 @@ export PATH="$HOME/.opencode/bin:$PATH"
 
 # Secrets (não versionado — ver ~/.secrets)
 [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/user/.local/bin:$PATH"
+. $HOME/asdf/asdf.sh
