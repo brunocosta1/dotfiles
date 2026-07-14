@@ -128,7 +128,7 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-# export TERM="screen-256color"
+# export TERM="xterm-256color"
 
 export DEFAULT_USER="$(whoami)" 
 
@@ -227,6 +227,8 @@ export PATH="$HOME/.opencode/bin:$PATH"
 # Secrets (não versionado — ver ~/.secrets)
 [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 
+# Pi
+export PATH="/home/estudante/.local/share/pi-node/node-v22.23.1-linux-x64/bin:$PATH"
 
 # Added by Antigravity CLI installer
 export PATH="/home/user/.local/bin:$PATH"

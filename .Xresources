@@ -1,13 +1,12 @@
-! do not with output
+! URxvt Configuration - based on Alacritty dotfiles
 
+! do not scroll with output
 URxvt*scrollTtyOutput: false
 
 ! scroll in relation to buffer
-
 URxvt*scrollWithBuffer: true
 
 ! scroll back to the bottom on keypress
-
 URxvt*scrollTtyKeypress: true
 
 URxvt.secondaryScreen: 1
@@ -15,57 +14,64 @@ URxvt.secondaryScroll: 0
 URxvt.secondaryWheel: 1
 URxvt.scrollBar: false
 
+! Font - JetBrainsMono Nerd Font Mono (required for urxvt icon display)
+URxvt.font: xft:JetBrainsMono Nerd Font Mono:style=Regular:pixelsize=25
 
-! Fonts
+! Colors - Tokyo Night (matches Alacritty)
+! Source: tokyonight_night.toml
+*background: #1a1b26
+*foreground: #c0caf5
 
-URxvt.font: xft:Hack Nerd Font Mono:pixelsize=20
-
-! Colors
-! -----------------------------------------------------------------------------
-! File: gruvbox-dark.xresources
-! Description: Retro groove colorscheme generalized
-! Author: morhetz <morhetz@gmail.com>
-! Source: https://github.com/morhetz/gruvbox-generalized
-! Last Modified: 6 Sep 2014
-! -----------------------------------------------------------------------------
-
-! hard contrast: *background: #1d2021
-*background: #282828
-! soft contrast: *background: #32302f
-*foreground: #ebdbb2
 ! Black + DarkGrey
-*color0:  #282828
-*color8:  #928374
+*color0:  #15161e
+*color8:  #414868
+
 ! DarkRed + Red
-*color1:  #cc241d
-*color9:  #fb4934
+*color1:  #f7768e
+*color9:  #f7768e
+
 ! DarkGreen + Green
-*color2:  #98971a
-*color10: #b8bb26
+*color2:  #9ece6a
+*color10: #9ece6a
+
 ! DarkYellow + Yellow
-*color3:  #d79921
-*color11: #fabd2f
+*color3:  #e0af68
+*color11: #e0af68
+
 ! DarkBlue + Blue
-*color4:  #458588
-*color12: #83a598
+*color4:  #7aa2f7
+*color12: #7aa2f7
+
 ! DarkMagenta + Magenta
-*color5:  #b16286
-*color13: #d3869b
+*color5:  #bb9af7
+*color13: #bb9af7
+
 ! DarkCyan + Cyan
-*color6:  #689d6a
-*color14: #8ec07c
+*color6:  #7dcfff
+*color14: #7dcfff
+
 ! LightGrey + White
-*color7:  #a89984
-*color15: #ebdbb2
+*color7:  #a9b1d6
+*color15: #c0caf5
 
-! Transparency
-
-!URxvt.depth: 32
-!URxvt.background: [90]#000000
+! Opacity (matches Alacritty: opacity = 1.0)
+URxvt.depth: 32
+URxvt.background: [100]#1a1b26
 
 ! Copy and paste
+URxvt.perl-ext-common: selection-to-clipboard,font-size
 
-URxvt.perl-ext-common: selection-to-clipboard
+! Font resize step (Ctrl+= / Ctrl+- / Ctrl+0)
+URxvt.font-size.step: 2
+
+! Ctrl+=  increase font (same as Ctrl++ on most keyboards)
+URxvt.keysym.C-equal: font-size:increase
+! Ctrl+-  decrease font
+URxvt.keysym.C-minus: font-size:decrease
+! Ctrl+0  reset font
+URxvt.keysym.C-0: font-size:reset
+! Keypad plus/minus also work
+URxvt.keysym.C-KP_Add: font-size:increase
+URxvt.keysym.C-KP_Subtract: font-size:decrease
 URxvt.keysym.Shift-Control-V: eval:paste_clipboard
 URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-
