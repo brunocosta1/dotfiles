@@ -127,6 +127,6 @@ fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 autoload -Uz compinit && compinit
 
 # [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-source /home/trabalho/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /home/estudante/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 

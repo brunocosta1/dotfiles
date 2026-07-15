@@ -46,6 +46,12 @@ bindsym $mod+Return exec alacritty;focus
 # start a Firefox
 bindsym $mod+n exec firefox
 
+# start the task manager
+bindsym $mod+t exec --no-startup-id "/home/estudante/.local/bin/task-manager --position 1400,40"
+
+# toggle the task manager above/below normal windows
+bindsym $mod+Shift+t exec --no-startup-id "pkill -USR1 -f 'task_app.py|task-manager'"
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -372,5 +378,8 @@ bindsym $mod+x exec ~/.config/i3/lock
 # exec_always --no-startup-id ~/.config/i3/monitors.sh
 exec --no-startup-id xrandr --output HDMI-1 --right-of DP-1
 
+for_window [title="Tasks"] floating enable, sticky enable, border pixel 2
+
+exec --no-startup-id python3 /home/estudante/Documents/projects/task-list/task_app.py --position 1400,50
 # Display
 # exec_always xrandr --output e-1 --mode 1920x1080
