@@ -230,4 +230,4 @@ export PATH="$HOME/.opencode/bin:$PATH"
 
 # Added by Antigravity CLI installer
 export PATH="/home/user/.local/bin:$PATH"
-. $HOME/asdf/asdf.sh
+# . $HOME/asdf/asdf.sh
