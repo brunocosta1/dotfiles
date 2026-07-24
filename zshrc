@@ -174,11 +174,11 @@ alias dotf="cd $pathdotfiles"
 export PATH=$PATH:$HOME/.local/share/nvim/lsp_servers/cssls/node_modules/vscode-langservers-extracted/bin/vscode-css-language-server
 export PATH=$PATH:$HOME/.local/bin
 export PATH="$HOME/lua-language-server/bin/:$PATH"
-alias luamake=/home/brunocosta/lua-language-server/3rd/luamake/luamake
+alias luamake=$HOME/lua-language-server/3rd/luamake/luamake
 
 
 
-export FLYCTL_INSTALL="/home/brunocosta/.fly"
+export FLYCTL_INSTALL="$HOME/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
 
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
@@ -228,8 +228,12 @@ export PATH="$HOME/.opencode/bin:$PATH"
 [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 
 # Pi
-export PATH="/home/estudante/.local/share/pi-node/node-v22.23.1-linux-x64/bin:$PATH"
+export PATH="$HOME/.local/share/pi-node/node-v22.23.1-linux-x64/bin:$PATH"
 
 # Added by Antigravity CLI installer
-export PATH="/home/user/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 # . $HOME/asdf/asdf.sh
+
+# >>> oh-my-opencode-slim background subagents >>>
+export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
+# <<< oh-my-opencode-slim background subagents <<<
