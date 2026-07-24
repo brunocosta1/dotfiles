@@ -1,0 +1,14 @@
+{
+  "theme": "tokyo-night",
+  "defaultProvider": "opencode-go",
+  "defaultModel": "deepseek-v4-flash",
+  "defaultThinkingLevel": "max",
+  "defaultProjectTrust": "ask",
+  "hideThinkingBlock": false,
+  "quietStartup": false,
+  "editorPaddingX": 1,
+  "outputPad": 1,
+  "autocompleteMaxVisible": 8,
+  "treeFilterMode": "default",
+  "showCacheMissNotices": false
+}
