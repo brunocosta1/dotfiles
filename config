@@ -46,12 +46,6 @@ bindsym $mod+Return exec alacritty;focus
 # start a Firefox
 bindsym $mod+n exec firefox
 
-# start the task manager
-bindsym $mod+t exec --no-startup-id "~/.local/bin/task-manager --position 1400,40"
-
-# toggle the task manager above/below normal windows
-bindsym $mod+Shift+t exec --no-startup-id "pkill -USR1 -f 'task_app.py|task-manager'"
-
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -128,10 +122,6 @@ set $ws10 "10"
 set $workspace1 "1: Firefox "
 set $workspace2 "2: Terminal "
 set $workspace3 "3: Spotify "
-
-workspace $workspace1 output DP-1
-workspace $workspace2 output HDMI-1
-workspace $workspace3 output DP-1
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -228,9 +218,9 @@ default_border none
 default_floating_border none
 
 
-# For screenshots
+# For screenshots (maim is installed by the Fedora setup)
 
-bindsym $mod+Print exec gnome-screenshot -a 
+bindsym $mod+Print exec --no-startup-id "maim -s -u | xclip -selection clipboard -t image/png -i"
 
 bindsym --release Shift+Print exec --no-startup-id "maim -s -u | xclip -selection clipboard -t image/png -i"
 bindsym Print exec --no-startup-id "maim -u | xclip -selection clipboard -t image/png -i"
@@ -375,11 +365,5 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl +5%
 
 bindsym $mod+x exec ~/.config/i3/lock
 
-# exec_always --no-startup-id ~/.config/i3/monitors.sh
-exec --no-startup-id xrandr --output HDMI-1 --right-of DP-1
-
-for_window [title="Tasks"] floating enable, sticky enable, border pixel 2
-
-exec --no-startup-id python3 ~/Documents/projects/task-list/task_app.py --position 1400,50
 # Display
 # exec_always xrandr --output e-1 --mode 1920x1080

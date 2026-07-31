@@ -69,7 +69,7 @@ echo -e "${BLUE}🚀 Setup do ambiente (Fedora) a partir de: ${DOTFILES_DIR}${NC
 # ---------------------------------------------------------------------------
 log "Atualizando o sistema e instalando pacotes..."
 sudo dnf upgrade -y --refresh >/dev/null
-sudo dnf install -y \
+sudo dnf install -y --skip-unavailable \
   git curl wget unzip ca-certificates gnupg2 \
   gcc gcc-c++ make cmake pkgconf-pkg-config \
   autoconf automake libtool stow \
@@ -281,10 +281,9 @@ link "$DOTFILES_DIR/picom.conf"    "$HOME/.config/picom.conf"
 link "$DOTFILES_DIR/config"        "$HOME/.config/i3/config"
 link "$DOTFILES_DIR/i3blocks.conf" "$HOME/.config/i3/i3blocks.conf"
 link "$DOTFILES_DIR/lock"          "$HOME/.config/i3/lock"
-link "$DOTFILES_DIR/monitors.sh"   "$HOME/.config/i3/monitors.sh"
 [ -f "$DOTFILES_DIR/.Xresources" ] && link "$DOTFILES_DIR/.Xresources" "$HOME/.Xresources"
 
-chmod +x "$DOTFILES_DIR/lock" "$DOTFILES_DIR/monitors.sh" \
+chmod +x "$DOTFILES_DIR/lock" \
          "$DOTFILES_DIR/tmux-new-session.sh" 2>/dev/null || true
 
 # ---------------------------------------------------------------------------
@@ -333,18 +332,8 @@ Próximos passos:
   3. No tmux, pressione 'prefix + I' (Ctrl-a + I) para instalar os plugins do TPM.
   4. Finalize as runtimes:   asdf install node latest && asdf install php latest
   5. Coloque seu wallpaper em ~/Imagens/wallpaper.jpg (usado pelo feh e pelo lock).
-  6. Ajustes opcionais:
-       - Crie ~/Imagens se ainda não existir:  mkdir -p ~/Imagens
-       - Caso use 2 monitores, descomente no i3 config a linha
-         exec_always --no-startup-id ~/.config/i3/monitors.sh
+   6. Crie ~/Imagens se ainda não existir:  mkdir -p ~/Imagens
 
 EOF
 
-warn "SEGURANÇA: existe uma DEEPSEEK_API_KEY em texto puro dentro do arquivo 'zshrc'"
-warn "rastreado pelo git. Rotacione a chave e mova-a para um arquivo não versionado"
-warn "(ex.: ~/.secrets carregado via 'source'), fora do repositório."
-
-warn "O zshrc deste repositório referencia vários binários opcionais"
-warn "(nvm, flyctl, pi-node, kiro, lua-language-server, npm-global, yarn,"
-warn "flutter, cplex, etc.). Se algum desses não estiver instalado, ignore"
-warn "as mensagens de erro correspondentes ao abrir o zsh pela primeira vez."
+info "Secrets opcionais são carregados de ~/.secrets, fora do repositório."
