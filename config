@@ -30,6 +30,9 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.config/i3/lock
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
 
+# Notification daemon (used by the wifi block click popup)
+exec --no-startup-id dunst
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
@@ -228,7 +231,6 @@ bindsym Print exec --no-startup-id "maim -u | xclip -selection clipboard -t imag
 
 
 exec_always --no-startup-id numlockx on
-exec --no-startup-id feh --bg-scale ~/Imagens/wallpaper.jpg
 exec picom
 
 

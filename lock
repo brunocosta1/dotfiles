@@ -1,42 +1,6 @@
 #!/bin/sh
-WALLPAPER="$HOME/Imagens/wallpaper.jpg"
-LOCKBG="$HOME/.cache/i3lock_bg.png"
-
-# Só regenera a imagem se ainda não existir ou se o wallpaper mudou.
-# Assim o i3lock sobe instantaneamente e não deixa a tela exposta.
-if [ ! -f "$LOCKBG" ] || [ "$WALLPAPER" -nt "$LOCKBG" ]; then
-python3 - "$WALLPAPER" "$LOCKBG" << 'EOF'
-import sys, re, subprocess, os
-from PIL import Image
-
-wallpaper, output = sys.argv[1], sys.argv[2]
-
-xrandr = subprocess.run(['xrandr', '--current'], capture_output=True, text=True).stdout
-monitors = [(int(w), int(h), int(x), int(y))
-            for w, h, x, y in re.findall(r'(\d+)x(\d+)\+(\d+)\+(\d+)', xrandr)]
-
-if not monitors:
-    monitors = [(1920, 1080, 0, 0)]
-
-total_w = max(x + w for w, h, x, y in monitors)
-total_h = max(y + h for w, h, x, y in monitors)
-
-canvas = Image.new('RGB', (total_w, total_h))
-
-if os.path.exists(wallpaper):
-    img = Image.open(wallpaper)
-else:
-    img = Image.new('RGB', (total_w, total_h), color=(13, 13, 26))
-
-for w, h, x, y in monitors:
-    canvas.paste(img.resize((w, h), Image.LANCZOS), (x, y))
-
-canvas.save(output)
-EOF
-fi
-
-i3lock \
-  --image="$LOCKBG" \
+i3lock -n \
+  --color=1a0a2e \
   --clock \
   --indicator \
   --time-str="%H:%M" \
@@ -55,6 +19,5 @@ i3lock \
   --line-color=00000000 \
   --verif-color=e8d5ffff \
   --wrong-color=cc0066ff &
-
 xset dpms force off
 wait
