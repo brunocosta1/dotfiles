@@ -194,15 +194,15 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 alias vz="nvim $HOME/.zshrc"
 alias sz="source $HOME/.zshrc"
 
-poweroff() {
-  echo -n "Bateu o ponto? (s/N): "
-  read -r resposta
-  if [[ "$resposta" =~ ^([sS][iI]|[sS])$ ]]; then
-    command poweroff
-  else
-    echo "Bata o ponto."
-  fi
-}
+# poweroff() {
+#   echo -n "Bateu o ponto? (s/N): "
+#   read -r resposta
+#   if [[ "$resposta" =~ ^([sS][iI]|[sS])$ ]]; then
+#     command poweroff
+#   else
+#     echo "Bata o ponto."
+#   fi
+# }
 
 alias trabalhodeontem="git log --oneline --since="yesterday 08:00" --until="08:00""
 
