@@ -11,4 +11,8 @@ decorations = "none"
 opacity = 1.0
 
 [general]
-import = ["~/.config/alacritty/themes/themes/tokyo-night.toml"]
+import = ["~/.config/alacritty/tokyonight/tokyonight_night.toml"]
+
+[terminal.shell]
+program = "/usr/bin/zsh"
+args = ["-1"]

@@ -64,22 +64,22 @@ echo -e "${BLUE}🚀 Setup do ambiente (Fedora) a partir de: ${DOTFILES_DIR}${NC
 #    - xorg-x11-server-utils traz xset/xrdb
 #    - pipewire-pulseaudio garante pactl
 #    - polkit-gnome (não policykit-1-gnome)
-#    - maim, picom, i3blocks, rofi, feh, etc. estão todos no Fedora oficial
-#    - python3-pillow é usado pelo script lock
+#    - maim, picom, i3blocks, rofi, etc. estão todos no Fedora oficial
+#    - autoconf bison re2c + devels abaixo são p/ compilar PHP via asdf
 # ---------------------------------------------------------------------------
 log "Atualizando o sistema e instalando pacotes..."
 sudo dnf upgrade -y --refresh >/dev/null
-sudo dnf install -y \
+sudo dnf install -y --skip-unavailable \
   git curl wget unzip ca-certificates gnupg2 \
   gcc gcc-c++ make cmake pkgconf-pkg-config \
   autoconf automake libtool stow \
   zsh tmux ripgrep fd-find fzf \
-  i3 i3status i3blocks rofi feh picom numlockx xss-lock brightnessctl \
+  i3 i3status i3blocks rofi picom numlockx xss-lock brightnessctl \
   maim xclip xrandr \
   network-manager-applet polkit-gnome \
   xorg-x11-server-utils xorg-x11-xauth xorg-x11-fonts-core \
   firefox \
-  python3 python3-pillow fontconfig \
+  python3 fontconfig \
   alacritty \
   pulseaudio-utils \
   ImageMagick \
@@ -90,7 +90,10 @@ sudo dnf install -y \
   libxcb-devel libxcb-composite-devel libxcb-xkb-devel \
   libxcb-randr-devel libxcb-xinerama-devel libxcb-image-devel \
   libxcb-util-devel \
-  giflib-devel
+  giflib-devel \
+  autoconf bison re2c libxml2-devel sqlite-devel oniguruma-devel \
+  libcurl-devel gd-devel libpq-devel libzip-devel openssl-devel \
+  libedit-devel libicu-devel libjpeg-devel readline-devel
 
 # ---------------------------------------------------------------------------
 # 2. Neovim (binário oficial mais recente)
@@ -281,10 +284,9 @@ link "$DOTFILES_DIR/picom.conf"    "$HOME/.config/picom.conf"
 link "$DOTFILES_DIR/config"        "$HOME/.config/i3/config"
 link "$DOTFILES_DIR/i3blocks.conf" "$HOME/.config/i3/i3blocks.conf"
 link "$DOTFILES_DIR/lock"          "$HOME/.config/i3/lock"
-link "$DOTFILES_DIR/monitors.sh"   "$HOME/.config/i3/monitors.sh"
 [ -f "$DOTFILES_DIR/.Xresources" ] && link "$DOTFILES_DIR/.Xresources" "$HOME/.Xresources"
 
-chmod +x "$DOTFILES_DIR/lock" "$DOTFILES_DIR/monitors.sh" \
+chmod +x "$DOTFILES_DIR/lock" \
          "$DOTFILES_DIR/tmux-new-session.sh" 2>/dev/null || true
 
 # ---------------------------------------------------------------------------
@@ -332,19 +334,6 @@ Próximos passos:
   2. Abra o Neovim (\`nvim\`) — o LazyVim baixa os plugins automaticamente.
   3. No tmux, pressione 'prefix + I' (Ctrl-a + I) para instalar os plugins do TPM.
   4. Finalize as runtimes:   asdf install node latest && asdf install php latest
-  5. Coloque seu wallpaper em ~/Imagens/wallpaper.jpg (usado pelo feh e pelo lock).
-  6. Ajustes opcionais:
-       - Crie ~/Imagens se ainda não existir:  mkdir -p ~/Imagens
-       - Caso use 2 monitores, descomente no i3 config a linha
-         exec_always --no-startup-id ~/.config/i3/monitors.sh
-
 EOF
 
-warn "SEGURANÇA: existe uma DEEPSEEK_API_KEY em texto puro dentro do arquivo 'zshrc'"
-warn "rastreado pelo git. Rotacione a chave e mova-a para um arquivo não versionado"
-warn "(ex.: ~/.secrets carregado via 'source'), fora do repositório."
-
-warn "O zshrc deste repositório referencia vários binários opcionais"
-warn "(nvm, flyctl, pi-node, kiro, lua-language-server, npm-global, yarn,"
-warn "flutter, cplex, etc.). Se algum desses não estiver instalado, ignore"
-warn "as mensagens de erro correspondentes ao abrir o zsh pela primeira vez."
+info "Secrets opcionais são carregados de ~/.secrets, fora do repositório."

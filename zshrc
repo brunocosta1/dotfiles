@@ -178,9 +178,6 @@ alias luamake=$HOME/lua-language-server/3rd/luamake/luamake
 
 
 
-export FLYCTL_INSTALL="$HOME/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
-
 if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 
 
@@ -188,52 +185,30 @@ if [[ $TERM == xterm ]]; then TERM=xterm-256color; fi
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 export PATH=~/.npm-global/bin:$PATH
 
-zstyle ':completation:*' menu select
-
-autoload -Uz compinit 
-compinit
+zstyle ':completion:*' menu select
 
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=19'
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-export PYTHONPATH=/opt/ibm/ILOG/CPLEX_Studio2211/cplex/python/3.10/x86-64_linux/
-# export PATH="$HOME/develop/flutter/bin:$PATH"
-export FLUTTER_ROOT="$(asdf where flutter 2>/dev/null)"
 alias vz="nvim $HOME/.zshrc"
 alias sz="source $HOME/.zshrc"
 
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-
-poweroff() {
-  echo -n "Bateu o ponto? (s/N): "
-  read -r resposta
-  if [[ "$resposta" =~ ^([sS][iI]|[sS])$ ]]; then
-    command poweroff
-  else
-    echo "Bata o ponto."
-  fi
-}
+# poweroff() {
+#   echo -n "Bateu o ponto? (s/N): "
+#   read -r resposta
+#   if [[ "$resposta" =~ ^([sS][iI]|[sS])$ ]]; then
+#     command poweroff
+#   else
+#     echo "Bata o ponto."
+#   fi
+# }
 
 alias trabalhodeontem="git log --oneline --since="yesterday 08:00" --until="08:00""
-
-# opencode
-export PATH="$HOME/.opencode/bin:$PATH"
 
 # Secrets (não versionado — ver ~/.secrets)
 [ -f "$HOME/.secrets" ] && source "$HOME/.secrets"
 
-# Pi
-export PATH="$HOME/.local/share/pi-node/node-v22.23.1-linux-x64/bin:$PATH"
-
 # Added by Antigravity CLI installer
 export PATH="$HOME/.local/bin:$PATH"
 # . $HOME/asdf/asdf.sh
-
-# >>> oh-my-opencode-slim background subagents >>>
-export OPENCODE_EXPERIMENTAL_BACKGROUND_SUBAGENTS=true
-# <<< oh-my-opencode-slim background subagents <<<
