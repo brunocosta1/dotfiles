@@ -13,6 +13,7 @@ NC='\033[0m'
 echo -e "${BLUE}🚀 Iniciando o setup completo do ambiente...${NC}"
 
 # 1. Dependências do Sistema & PHP
+#    (autoconf bison re2c + devels p/ compilar PHP via asdf)
 if [[ "$OSTYPE" == "darwin"* ]]; then
   echo -e "${GREEN}🍎 Instalando pacotes macOS via Homebrew...${NC}"
   brew install neovim tmux zsh git curl alacritty stow ripgrep fd fzf coreutils openssl readline libxml2 curl
@@ -21,8 +22,10 @@ else
   sudo apt update
   # Dependências essenciais + as necessárias para compilar PHP no asdf
   sudo apt install -y tmux zsh git curl alacritty stow ripgrep fd-find fzf \
-    build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
-    libsqlite3-dev libxml2-dev libcurl4-openssl-dev libonig-dev libzip-dev
+    build-essential autoconf bison re2c \
+    libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
+    libsqlite3-dev libxml2-dev libcurl4-openssl-dev libonig-dev libzip-dev \
+    libgd-dev libpq-dev libedit-dev libicu-dev libjpeg-dev
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -98,7 +101,7 @@ echo -e "${GREEN}🔒 Instalando i3lock-color...${NC}"
 sudo apt-get install -y autoconf gcc make pkg-config libpam0g-dev libcairo2-dev \
   libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev \
   libxcb-image0-dev libxcb-util-dev libxcb-xrm-dev libxcb-randr0-dev libxcb-xinerama0-dev \
-  libxkbcommon-dev libxkbcommon-x11-dev libgif-dev python3-pil
+  libxkbcommon-dev libxkbcommon-x11-dev libgif-dev
 git clone https://github.com/Raymo111/i3lock-color.git /tmp/i3lock-color
 cd /tmp/i3lock-color && autoreconf -i && ./configure && make -j$(nproc) && sudo make install
 cd "$DOTFILES_DIR"
@@ -107,4 +110,3 @@ echo -e "${BLUE}--- SETUP FINALIZADO ---${NC}"
 echo -e "1. Abra o Neovim para o LazyVim instalar os plugins automaticamente."
 echo -e "2. No Tmux, pressione 'prefix + I' para instalar os plugins do TPM."
 echo -e "3. Rode 'asdf install php latest' para finalizar a instalação do PHP."
-echo -e "4. Coloque seu wallpaper em ~/Imagens/wallpaper.jpg"

@@ -38,19 +38,21 @@ echo -e "${BLUE}🚀 Setup do ambiente (Pop!_OS 22.04) a partir de: ${DOTFILES_D
 # 1. Pacotes do sistema (APT)
 # ---------------------------------------------------------------------------
 log "Instalando pacotes do sistema via APT..."
+# autoconf bison re2c + devels p/ compilar PHP via asdf (gd, pq, edit, icu, jpeg)
 sudo apt update
 sudo apt install -y \
   git curl wget unzip ca-certificates gnupg \
   build-essential pkg-config autoconf bison re2c stow \
   zsh tmux ripgrep fd-find fzf \
-  i3 i3blocks rofi feh picom numlockx xss-lock brightnessctl \
+  i3 i3blocks rofi picom numlockx xss-lock brightnessctl \
   maim xclip gnome-screenshot \
   network-manager-gnome policykit-1-gnome pulseaudio-utils \
   x11-xserver-utils \
   firefox \
-  python3 python3-pil fontconfig \
+  python3 fontconfig \
   libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev \
-  libxml2-dev libcurl4-openssl-dev libonig-dev libzip-dev
+  libxml2-dev libcurl4-openssl-dev libonig-dev libzip-dev \
+  libgd-dev libpq-dev libedit-dev libicu-dev libjpeg-dev
 
 # ---------------------------------------------------------------------------
 # 2. Neovim (binário oficial mais recente)
@@ -250,8 +252,6 @@ Próximos passos:
   2. Abra o Neovim (\`nvim\`) para o LazyVim instalar os plugins automaticamente.
   3. No tmux, pressione 'prefix + I' para instalar os plugins do TPM.
   4. Finalize as runtimes:  asdf install node latest  &&  asdf install php latest
-  5. Coloque seu wallpaper em ~/Imagens/wallpaper.jpg (usado pelo feh e pelo lock).
-
 EOF
 
 warn "SEGURANÇA: existe uma DEEPSEEK_API_KEY em texto puro dentro do arquivo 'zshrc'"
