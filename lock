@@ -19,5 +19,5 @@ i3lock -n \
   --line-color=00000000 \
   --verif-color=e8d5ffff \
   --wrong-color=cc0066ff &
-xset dpms force off
+sleep 1 && xset dpms force off &
 wait

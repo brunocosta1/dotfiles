@@ -367,6 +367,6 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl +5%
 
 bindsym $mod+x exec ~/.config/i3/lock
 
-exec_always --no-startup-id xinput set-prop "FTCS0038:00 2808:0106 Touchpad" "libinput Tapping enabled" 1
+exec_always --no-startup-id xinput set-prop "FTCS0038:00 2808:0106 Touchpad" "libinput Tapping Enabled" 1
 # Display
 # exec_always xrandr --output e-1 --mode 1920x1080
