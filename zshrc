@@ -85,8 +85,8 @@ plugins=(
     git
     zsh-syntax-highlighting    
     zsh-autosuggestions
-    fzf
     vi-mode
+    fzf
     tmux
     asdf
 )
@@ -212,3 +212,7 @@ alias trabalhodeontem="git log --oneline --since="yesterday 08:00" --until="08:0
 # Added by Antigravity CLI installer
 export PATH="$HOME/.local/bin:$PATH"
 # . $HOME/asdf/asdf.sh
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/brunocosta/.local/bin:$PATH"
