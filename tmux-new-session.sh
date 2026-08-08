@@ -8,4 +8,4 @@ while tmux has-session -t "=$i" 2>/dev/null; do
     i=$((i + 1))
 done
 tmux new-session -d -s "$i"
-tmux switch-client -t "$i"
+tmux switch-client -t "=$i"
